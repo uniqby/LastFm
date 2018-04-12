@@ -615,7 +615,9 @@
         @"listeners": @[ @"./listeners", @"NSNumber" ],
         @"playcount": @[ @"./playcount", @"NSNumber" ],
         @"url": @[ @"./url", @"NSURL" ],
-        @"image": @[ @"./image[@size=\"large\"]", @"NSURL" ],
+        @"image_large": @[ @"./image[@size=\"large\"]", @"NSURL" ],
+        @"image_extralarge": @[ @"./image[@size=\"extralarge\"]", @"NSURL" ],
+        @"image_mega": @[ @"./image[@size=\"mega\"]", @"NSURL" ],
         @"releasedate": @[ @"./releasedate", @"NSString" ], // deprecated
         @"date": @[ @"./releasedate", @"NSDate" ],
         @"tags": @[ @"./toptags/tag/name", @"NSArray" ],
