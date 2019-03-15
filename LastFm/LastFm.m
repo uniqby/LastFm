@@ -711,7 +711,7 @@
 
     return [self performApiCallForMethod:@"track.getInfo"
                                 useCache:[self useCache]
-                              withParams:@{ @"track": [self forceString:title], @"artist": [self forceString:artist], @"autocorrect": "1" }
+                              withParams:@{ @"track": [self forceString:title], @"artist": [self forceString:artist], @"autocorrect": @"1" }
                                rootXpath:@"./track"
                         returnDictionary:YES
                            mappingObject:mappingObject
@@ -749,7 +749,7 @@
 - (NSOperation *)loveTrack:(NSString *)title artist:(NSString *)artist successHandler:(LastFmReturnBlockWithDictionary)successHandler failureHandler:(LastFmReturnBlockWithError)failureHandler {
     return [self performApiCallForMethod:@"track.love"
                                 useCache:[self useCache]
-                              withParams:@{ @"track": [self forceString:title], @"artist": [self forceString:artist], @"autocorrect": "1" }
+                              withParams:@{ @"track": [self forceString:title], @"artist": [self forceString:artist], @"autocorrect": @"1" }
                                rootXpath:@"."
                         returnDictionary:YES
                            mappingObject:@{}
