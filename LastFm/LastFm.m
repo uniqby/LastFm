@@ -709,6 +709,14 @@
         @"url": @[ @"./url", @"NSURL" ]
     };
 
+    return [self getInfoForTrack:title
+                                artist:artist
+                                mappingObject:mappingObject
+                                successHandler:successHandler
+                                failureHandler:failureHandler];
+}
+
+- (NSOperation *)getInfoForTrack:(NSString *)title artist:(NSString *)artist mappingObject:(NSDictionary *)mappingObject successHandler:(LastFmReturnBlockWithDictionary)successHandler failureHandler:(LastFmReturnBlockWithError)failureHandler {
     return [self performApiCallForMethod:@"track.getInfo"
                                 useCache:[self useCache]
                               withParams:@{ @"track": [self forceString:title], @"artist": [self forceString:artist], @"autocorrect": @"1" }
@@ -736,6 +744,13 @@
         @"url": @[ @"./url", @"NSURL" ]
     };
 
+    return [self getInfoForTrack:musicBrainId
+                                mappingObject:mappingObject
+                                successHandler:successHandler
+                                failureHandler:failureHandler]; 
+}
+
+- (NSOperation *)getInfoForTrack:(NSString *)musicBrainId mappingObject:(NSDictionary *)mappingObject successHandler:(LastFmReturnBlockWithDictionary)successHandler failureHandler:(LastFmReturnBlockWithError)failureHandler {
     return [self performApiCallForMethod:@"track.getInfo"
                                 useCache:[self useCache]
                              withParams:@{ @"mbid": [self forceString:musicBrainId] }
